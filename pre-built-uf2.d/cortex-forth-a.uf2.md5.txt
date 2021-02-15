@@ -1,0 +1,1 @@
+49ae8aecc5668854b6c0e46a7b274765  ./cortex-forth-a.uf2
