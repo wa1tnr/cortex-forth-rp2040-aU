@@ -1,0 +1,20 @@
+Using PICO_SDK_PATH from environment ('../../pico-sdk')
+PICO_SDK_PATH is /some/path/to/cortex-forth-rp2040-aU/29-cortex-forth-a.d/pico-sdk
+Defaulting PICO_PLATFORM to rp2040 since not specified.
+Defaulting PICO platform compiler to pico_arm_gcc since not specified.
+-- Defaulting build type to 'Release' since not specified.
+PICO compiler is pico_arm_gcc
+PICO_GCC_TRIPLE defaulted to arm-none-eabi
+-- The C compiler identification is GNU 7.3.1
+-- The CXX compiler identification is GNU 7.3.1
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/arm-none-eabi-gcc
+Defaulting PICO target board to pico since not specified.
+Using board configuration from /some/path/to/cortex-forth-rp2040-aU/29-cortex-forth-a.d/pico-sdk/src/boards/include/boards/pico.h
+-- Found Python3: /usr/bin/python3.7 (found version "3.7.3") found components:  Interpreter 
+TinyUSB available at /some/path/to/cortex-forth-rp2040-aU/29-cortex-forth-a.d/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040; adding USB support.
+-- Found Doxygen: /usr/bin/doxygen (found version "1.8.13") found components:  doxygen dot 
+ELF2UF2 will need to be built
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /some/path/to/cortex-forth-rp2040-aU/29-cortex-forth-a.d/pico-examples/build
