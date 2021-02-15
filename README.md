@@ -6,7 +6,7 @@ Not yet instantiated meaningfully.
 
 Upstream can be found at
 
- [ https://github.com/wa1tnr/Cortex-Forth/.git ]
+ [ https://github.com/wa1tnr/Cortex-Forth/ ]
 
 and even further upstream at
 
