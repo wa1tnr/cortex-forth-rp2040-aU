@@ -1,4 +1,4 @@
-// Mon Feb 15 17:07:20 UTC 2021
+// Mon Feb 15 18:55:13 UTC 2021
 // wa1tnr
 // cortex-forth for RP2040
 
@@ -36,6 +36,8 @@ int main() {
 
     sleep_ms(4800);
     // for (int i=3;i>0;i--) _pico_LED();
+    // uart_puts(UART_ID, "\r\n\r\n   cortex-forth-rp2040-aU r0.1.0-pre-alpha\r\n\r\n");
+    //      0.1.0-pre-alpha  checked carefully - available and appropriate
     uart_puts(UART_ID, "\r\n\r\n   cortex-forth-rp2040-a r0.1.0-pre-alpha\r\n\r\n");
     putchar(' ');
     putchar(' ');
