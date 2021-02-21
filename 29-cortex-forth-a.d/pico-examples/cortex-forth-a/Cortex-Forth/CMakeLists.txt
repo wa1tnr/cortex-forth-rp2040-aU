@@ -1,0 +1,5 @@
+if ( CMAKE_COMPILER_IS_GNUCC )
+    set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+endif()
+add_library(Cortex-Forth Cortex-Forth.c)
+target_link_libraries(Cortex-Forth pico_stdlib)
