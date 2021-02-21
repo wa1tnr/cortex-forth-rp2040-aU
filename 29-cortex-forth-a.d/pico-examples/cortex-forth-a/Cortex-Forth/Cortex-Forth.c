@@ -10,6 +10,8 @@
 #include "pico/stdio.h"
 
 /* cortex forth */
+#include "Cortex-Forth.h"
+
 #define RAM_SIZE 0x1200
 #define S0 0x1000
 #define R0 0x0f00
@@ -18,6 +20,11 @@
 #define CODE(m, a) {memory.program [m] = a;}
 #define DATA(m, a) {memory.data [m] = a;}
 #define IMMED 0x80
+
+#define RP2040_PICO
+#ifdef RP2040_PICO
+#include "rp2040_pico.inc"
+#endif
 
 // global variables
 union Memory {
