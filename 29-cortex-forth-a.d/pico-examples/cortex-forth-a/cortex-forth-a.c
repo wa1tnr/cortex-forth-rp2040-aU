@@ -18,10 +18,12 @@
 
 #define UART_TX_PIN 0
 #define UART_RX_PIN 1
-// extern void interpreter(void);
+extern void interpreter(void);
 // extern int _pico_LED(void);
 
-void interpreter(void) { }
+// void interpreter(void) { }
+
+extern void _OK(void);
 
 int main() {
     sleep_ms(1800);
@@ -38,6 +40,7 @@ int main() {
     // for (int i=3;i>0;i--) _pico_LED();
     // uart_puts(UART_ID, "\r\n\r\n   cortex-forth-rp2040-aU r0.1.0-pre-alpha\r\n\r\n");
     //      0.1.0-pre-alpha  checked carefully - available and appropriate
+    _OK(); // Cortex-Forth.c
     uart_puts(UART_ID, "\r\n\r\n   cortex-forth-rp2040-a r0.1.0-pre-alpha\r\n\r\n");
     putchar(' ');
     putchar(' ');

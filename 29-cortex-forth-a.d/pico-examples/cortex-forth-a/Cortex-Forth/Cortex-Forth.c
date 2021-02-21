@@ -37,6 +37,7 @@ int S = S0; // data stack pointer
 int R = R0; // return stack pointer
 int I = 0; // instruction pointer
 int W = 0; // working register
+// uint8_t getKey()
 int T = 0; // top of stack
 int H = 0; // dictionary pointer, HERE
 int D = 0; // dictionary list entry point
@@ -86,6 +87,8 @@ void _QDUP (void) {
 
 void _KEY (void) {
   _DUP ();
+  // uint8_t getKey(void);
+  T = getKey();
   // while (!Serial.available ());
   // T = Serial.read ();
 //  Serial.write (T);
@@ -94,15 +97,20 @@ void _KEY (void) {
 void _EMIT (void) {
   char c = T;
   // Serial.write (c);
+  // void putch(char c);
+  putch(c);
   _DROP ();
 }
 
 void _CR (void) {
+  putch('\n');
   // Serial.println (" ");
 }
 
 void _OK (void) {
   // if (tib [tib.length () - 1] == 10) Serial.println (" Ok");
+  strcpy(print_string, "\n\nOkay my friend\n\n"); // demo use
+  printf("%s", print_string);
 }
 
 void _SWAP (void) {
@@ -115,4 +123,9 @@ void _OVER (void) {
   _DUP ();
   T = memory.data [S + 1];
 }
+
+void interpreter(void) {
+   _KEY(); _EMIT(); _CR(); _OK();
+}
+
 // Sun Feb 21 20:07:02 UTC 2021

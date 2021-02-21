@@ -122,8 +122,9 @@ int getquery(void) {
  ******
  */
 
-void interpreter(void);         /* forward reference */
+// void interpreter(void);         /* forward reference */
 
+/*
 void camelforth(void) {
     for (volatile int i = 9080706; i > 0; i--) {
     }
@@ -136,7 +137,8 @@ void camelforth(void) {
     putchar(' ');
     // chopped_acm_write(print_string);
     // _pico_LED(); // blocking
-    while (1) {                 /* loop in case interpreter() ever terminates */
-        interpreter();
+    while (1) {                 // loop in case interpreter() ever terminates
+        // interpreter();
     }
 }
+*/
