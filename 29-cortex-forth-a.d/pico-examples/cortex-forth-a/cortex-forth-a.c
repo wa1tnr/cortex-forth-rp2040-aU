@@ -9,7 +9,9 @@
  */
 
 #include <stdio.h>
+#include <string.h> // strcpy
 #include "pico/stdlib.h"
+#include "Cortex-Forth/rp2040_pico.h"
 
 /// \tag::hello_uart[]
 
@@ -24,6 +26,7 @@ extern void interpreter(void);
 // void interpreter(void) { }
 
 extern void _OK(void);
+// extern char print_string[stack_buffer_length];
 
 int main() {
     sleep_ms(1800);
@@ -61,6 +64,14 @@ int main() {
     putchar('\r');
     putchar('\n');
     // printf("%s" "printf here\r\n\r\n   cortex-forth-rp2040-a r0.1.0-pre-alpha\r\n\r\n");
+/*
+113:  strcpy(print_string, "  Ok");
+114:  printf("%s", print_string);
+*/
+
+    strcpy(print_string, "  greet  22 Feb 17:20 UTC");
+    printf("%s", print_string);
+    putchar('\n');
 
     while(1) {
         // _pico_LED(); // test using GPIO hardware to blink Pi Pico onboard LED
