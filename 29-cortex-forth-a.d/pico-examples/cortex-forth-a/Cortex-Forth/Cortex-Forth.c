@@ -24,6 +24,9 @@
 #define RP2040_PICO
 #ifdef RP2040_PICO
 #include "rp2040_pico.inc"
+#include "rp2040_reflash.inc"
+// #include "hardware/resets.h"
+// #include "hardware/regs/m0plus.h"
 #endif
 
 // global variables
@@ -109,8 +112,10 @@ void _CR (void) {
 
 void _OK (void) {
   // if (tib [tib.length () - 1] == 10) Serial.println (" Ok");
-  strcpy(print_string, "\n\nOkay my friend\n\n"); // demo use
+  // strcpy(print_string, "\n\nOkay my friend\n\n"); // demo use
+  strcpy(print_string, "  Ok");
   printf("%s", print_string);
+  strcpy(print_string, "  ~~");
 }
 
 void _SWAP (void) {
@@ -124,8 +129,23 @@ void _OVER (void) {
   T = memory.data [S + 1];
 }
 
+// #include "rp2040_reflash.inc"
+
 void interpreter(void) {
-   _KEY(); _EMIT(); _CR(); _OK();
+   uint8_t gotkey ;
+   _KEY();
+   gotkey = T;
+   if ( (gotkey == '\n') ||
+        (gotkey == '\r') ||
+        (gotkey == '~' ) ||
+        (gotkey == '+' ) ||
+        (gotkey == '-' ) ) {
+      _OK();
+      if (gotkey == '\n') _CR();
+      if (gotkey == '~' ) reflash();
+      return ;
+    }
+    _EMIT();//  _CR(); _OK();
 }
 
-// Sun Feb 21 20:07:02 UTC 2021
+// Mon Feb 22 17:15:42 UTC 2021
